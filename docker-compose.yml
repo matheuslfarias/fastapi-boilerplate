@@ -1,0 +1,14 @@
+version: "3.4"
+services:
+  fast-api-boilerplate-project:
+    tty: true
+    image: "fast-api-boilerplate-project"
+    stdin_open: true
+    build:
+      context: .
+      target: "development"
+    volumes:
+      - ".:/src"
+    env_file: .env
+    ports:
+      - "8000:8000"
